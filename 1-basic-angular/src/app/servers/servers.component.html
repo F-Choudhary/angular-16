@@ -3,11 +3,37 @@
     type="text"
     class="form-control"
     (input)="onUpdateServerName($event)">
-    <input type="text">
-<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<input 
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName">
+<p>{{ serverName }}</p>
+<button 
+    class=
+    "btn btn-primary" 
+    [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 <p>{{ allowNewServer }}</p>
 <p [innerText]="allowNewServer"></p>
 <p>{{ serverCreationStatus }}</p>
 
 <app-server></app-server>
 <app-server></app-server>
+
+<!-- Data Binding Assignmen -->
+<hr>
+<h3>--Data Binding Assignment--</h3>
+<label>Username</label>
+<input 
+    type="text"
+    class="form-control"
+    [(ngModel)]="userName">
+<p>{{ userName }}</p>
+<button 
+    class=
+    "btn btn-primary" 
+    [disabled]="userName===''" (click)="userName = ''">Reset User</button>
+
+<!-- <button 
+    class=
+    "btn btn-primary" 
+    [disabled]="!userName" (click)="onReset()">Reset</button> -->
