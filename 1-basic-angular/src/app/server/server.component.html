@@ -1,2 +1,9 @@
 <!-- <p>the server component</p> -->
- <p>Server with ID {{ serverId }} is {{ serverStatus }}</p>
+<p
+  [ngStyle]="{ backgroundColor: getColor() }"
+  [ngClass]="{ 'online': serverStatus === 'Online' }"
+>
+  Server with ID {{ serverId }} is {{ serverStatus }}
+</p>
+<p>these red and green color effect is comming from '[ngStyle]' directive</p>
+<p>and white text is coming from [ngClass] when server is online</p>

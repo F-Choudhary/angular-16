@@ -1,39 +1,58 @@
 <label>Server Name</label>
-<input 
-    type="text"
-    class="form-control"
-    (input)="onUpdateServerName($event)">
-<input 
-    type="text"
-    class="form-control"
-    [(ngModel)]="serverName">
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+<input type="text" class="form-control" [(ngModel)]="serverName" />
 <p>{{ serverName }}</p>
-<button 
-    class=
-    "btn btn-primary" 
-    [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Add Server</button
+><span>after 2 second it will active code is in the constructor</span>
 <p>{{ allowNewServer }}</p>
 <p [innerText]="allowNewServer"></p>
 <p>{{ serverCreationStatus }}</p>
 
-<app-server></app-server>
-<app-server></app-server>
+<!-- <app-server></app-server>
+<app-server></app-server> -->
 
 <!-- Data Binding Assignmen -->
-<hr>
+<hr />
 <h3>--Data Binding Assignment--</h3>
 <label>Username</label>
-<input 
-    type="text"
-    class="form-control"
-    [(ngModel)]="userName">
+<input type="text" class="form-control" [(ngModel)]="userName" />
 <p>{{ userName }}</p>
-<button 
-    class=
-    "btn btn-primary" 
-    [disabled]="userName===''" (click)="userName = ''">Reset User</button>
+<button
+  class="btn btn-primary"
+  [disabled]="userName === ''"
+  (click)="userName = ''"
+>
+  Reset User
+</button>
 
 <!-- <button 
     class=
     "btn btn-primary" 
     [disabled]="!userName" (click)="onReset()">Reset</button> -->
+
+<!-- -------------------------------------------------------------------------------- -->
+<hr />
+<!-- directives     -->
+<h3>Directives</h3>
+<label for="">Server Name 2</label>
+<input type="text" class="form-control" [(ngModel)]="serverName2" />
+
+<button class="btn btn-primary" (click)="onCreateServer2()">
+  Add Server 2
+</button>
+<p *ngIf="serverCreated; else noServer">
+  Server was created, server name is {{ serverName2 }}
+</p>
+<ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template>
+
+
+<app-server *ngFor="let server of servers"></app-server>
+
+
