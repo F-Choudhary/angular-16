@@ -14,12 +14,12 @@ export class RecipeListComponent {
       "https://ministryofcurry.com/wp-content/uploads/2024/06/chicken-biryani.jpg"
     ),
     new Recipe(
-      "Crispy Chicken",
+      "Paneer Tikka Masala",
       "this is test description",
-      "https://i.ytimg.com/vi/3CVDrAkhDmI/maxresdefault.jpg"
+      "https://healthynibblesandbits.com/wp-content/uploads/2019/07/Paneer-Tikka-Masala-FF3.jpg"
     ), 
     new Recipe(
-      "Smashed Chicken Burger",
+      "Smashed Burger",
       "this is test description",
       "https://cdn.urbanpiper.com/media/bizmedia/2021/11/03/BDB_10.jpg"
     ),
